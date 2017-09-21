@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.academy.biz.student.service.StudentVO" alias="student"></typeAlias>
+		<typeAlias alias="student" type="com.academy.biz.student.service.StudentVO" />
+		<typeAlias alias="school" type="com.academy.biz.student.service.SchoolVO" />
 	</typeAliases>
 	
 	<mappers>

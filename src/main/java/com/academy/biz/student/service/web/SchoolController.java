@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.academy.biz.student.service.SchoolService;
 import com.academy.biz.student.service.SchoolVO;
 
-import sun.print.resources.serviceui;
-
 @Controller
 @RequestMapping("/school")
 public class SchoolController {
@@ -20,14 +18,15 @@ public class SchoolController {
 	@Autowired
 	SchoolService schoolService;
 
-	@RequestMapping("/list.ricemen")
+	@RequestMapping("list.ricemen")
 	public String listSchool(Model model) {
 		List<SchoolVO> schoolList = schoolService.getSchoolList();
 		model.addAttribute("schoolList", schoolList);
 		return "school/getSchoolList.jsp";
 	}
 	
-	public String getSchool(@RequestParam("s_seq") int s_seq, Model model) {
+	@RequestMapping("view.ricemen")
+	public String view(@RequestParam("s_seq") int s_seq, Model model) {
 		SchoolVO school = schoolService.getSchool(s_seq);
 		model.addAttribute("school", school);
 		return "school/getSchool.jsp";

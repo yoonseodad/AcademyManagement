@@ -19,26 +19,8 @@
 		WHERE columnname1 = #{value}
 	</select>
 
-	<select id="getStudentList" resultMap="student">
+	<select id="getStudentList" resultType="student">
 		SELECT * FROM tbl_student ORDER BY seq DESC
 	</select>
-
-	<insert id="insertStudent" parameterType="#modelname">
-		INSERT INTO tbl_student ()
-		VALUES()
-	</insert>
-
-	<update id="updateSomething" parameterType="#modelname">
-		UPDATE tbl_student
-		SET
-		columnname1=#{param1}
-		WHERE
-		columnname2 = #{param2}
-	</update>
-
-	<delete id="deleteSomething" parameterType="int">
-		DELETE FROM tbl_student WHERE
-		columnname1 = #{param1}
-	</delete>
 
 </mapper>

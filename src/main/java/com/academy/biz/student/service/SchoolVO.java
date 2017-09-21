@@ -6,7 +6,7 @@ public class SchoolVO {
 
 	private int s_seq;
 	private String s_name;
-	private Enum<Grade> grade;
+	private int s_grade;
 	/**
 	 * @return the s_seq
 	 */
@@ -32,20 +32,17 @@ public class SchoolVO {
 		this.s_name = s_name;
 	}
 	/**
-	 * @return the grade
+	 * @return the s_grade
 	 */
-	public Enum<Grade> getGrade() {
-		return grade;
+	public int getS_grade() {
+		return s_grade;
 	}
 	/**
-	 * @param grade the grade to set
+	 * @param s_grade the s_grade to set
 	 */
-	public void setGrade(Enum<Grade> grade) {
-		this.grade = grade;
+	public void setS_grade(int s_grade) {
+		this.s_grade = s_grade;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

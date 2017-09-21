@@ -10,7 +10,7 @@ public enum Grade {
 	Etc(6, "기타");
 	
 	private int value;
-	private final String name;
+	private String name;
 	
 	Grade(int value, String name) {
 		this.value = value;
@@ -22,14 +22,24 @@ public enum Grade {
 	public int getValue() {
 		return value;
 	}
-
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(int value) {
+		this.value = value;
+	}
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
-
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 	public static Grade valueOf(int value) {
 		switch(value) {
 		case 1: return ElementarySchool;
@@ -40,22 +50,6 @@ public enum Grade {
 		case 6: return Etc;
 		default: throw new AssertionError("Unknow value : "  + value);
 		}
-	}
-	
-	public static Grade NameOf(int value) {
-		switch(value) {
-		case 1: return ElementarySchool;
-		case 2: return MiddleSchool;
-		case 3: return HighSchool;
-		case 4: return RepeatStudent;
-		case 5: return University;
-		case 6: return Etc;
-		default: throw new AssertionError("Unknow value : "  + value);
-		}
-	}
-	
-	public static void main(String[] args) {
-		System.out.println(Grade.valueOf(Grade.MiddleSchool));
 	}
 	
 }

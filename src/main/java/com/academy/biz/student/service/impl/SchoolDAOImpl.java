@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.academy.biz.student.service.SchoolDAO;
 import com.academy.biz.student.service.SchoolVO;
 
-@Repository("schoolDao")
+@Repository
 public class SchoolDAOImpl implements SchoolDAO {
 	
 	@Autowired
@@ -55,7 +55,7 @@ public class SchoolDAOImpl implements SchoolDAO {
 	 */
 	@Override
 	public List<SchoolVO> getSchoolList() {
-		return template.selectList("academy.school.getSchoolList");
+		return template.selectList("academy.school.getList");
 	}	
 
 }

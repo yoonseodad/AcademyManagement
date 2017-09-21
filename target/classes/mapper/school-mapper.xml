@@ -4,27 +4,26 @@
 
 <mapper namespace="academy.school">
 
+	<select id="getSchoolList" resultType="school">
+		SELECT s_seq, s_name, s_grade FROM tbl_school ORDER BY s_name ASC
+	</select>
+	
+	<select id="getList" resultType="school">
+		SELECT s_seq, s_name, s_grade FROM tbl_school ORDER BY s_name ASC
+	</select>
+	
 	<select id="getSchool" parameterType="int" resultType="school">
 		SELECT
-			* 
+			s_seq, s_name, s_grade 
 		FROM tbl_school
-		WHERE seq = #{seq}
+		WHERE s_seq = #{s_seq}
 	</select>
-
-	<select id="getSchoolList" resultMap="school">
-		SELECT * FROM tbl_school ORDER BY s_seq DESC
-	</select>
-
-	<insert id="insertSchool" parameterType="school">
-		INSERT INTO tbl_school (s_name, s_type)
-		VALUES(#{s_name}, #{s_type});
-	</insert>
 
 	<update id="updateSchool" parameterType="school">
 		UPDATE tbl_school
 		SET
 			s_name = #{s_name}, 
-			s_type = ${s_type}
+			s_type = #{s_grade}
 		WHERE s_seq = #{s_seq}
 	</update>
 
@@ -33,8 +32,8 @@
 	</delete>
 	
 	<insert id="insertSchool" parameterType="school">
-		INSERT INTO tbl_school (s_seq, s_name, s_type) 
-		VALUES (#{s_seq}, #{s_name}, #{s_type) 
+		INSERT INTO tbl_school (s_name, s_grade) 
+		VALUES (#{s_name}, #{s_grade}) 
 	</insert>
 
 </mapper>
