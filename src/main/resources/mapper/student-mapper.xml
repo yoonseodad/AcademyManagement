@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="academy.student">
+
+	<!--
+		<resultMap type="#modelname" id="YourResultSet">
+			<id property="param1" column="columnname1" />
+			<result property="param2" column="columnname2" />
+			<result property="param3" column="columnname3" />
+		</resultMap>	 
+	 -->
+
+	<select id="getStudent" parameterType="int" resultType="student">
+		SELECT
+			* 
+		FROM tbl_student
+		WHERE columnname1 = #{value}
+	</select>
+
+	<select id="getStudentList" resultMap="student">
+		SELECT * FROM tbl_student ORDER BY seq DESC
+	</select>
+
+	<insert id="insertStudent" parameterType="#modelname">
+		INSERT INTO tbl_student ()
+		VALUES()
+	</insert>
+
+	<update id="updateSomething" parameterType="#modelname">
+		UPDATE tbl_student
+		SET
+		columnname1=#{param1}
+		WHERE
+		columnname2 = #{param2}
+	</update>
+
+	<delete id="deleteSomething" parameterType="int">
+		DELETE FROM tbl_student WHERE
+		columnname1 = #{param1}
+	</delete>
+
+</mapper>
